@@ -1,12 +1,8 @@
 name: deploy
 
 inputs:
-  envName:
-    required: true
   sasUrl:
     required: true
-
-
 runs:
   using: "composite"
   steps:
