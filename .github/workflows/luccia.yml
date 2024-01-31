@@ -12,7 +12,7 @@ on:
       - cron:  '*/20 * * * *'
 
 concurrency:
-  group:  ${{ vars.GUILD_NAME }}
+  group: luccia
   cancel-in-progress: true
   
 env: 
