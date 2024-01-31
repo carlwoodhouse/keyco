@@ -1,27 +1,25 @@
 name: banshee
 
 on:
-    # Runs on pushes targeting the default branch
-    push:
-        branches: ["main"]
+  # Runs on pushes targeting the default branch
+  push:
+      branches: ["main"]
 
-    # Allows you to run this workflow manually from the Actions tab
-    workflow_dispatch:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
-    schedule:
-        - cron:  '*/20 * * * *'
+  schedule:
+      - cron:  '*/20 * * * *'
   
       
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    # We need this because GitHub needs to clone the branch to pipeline
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Deploy
-        uses: "./.github/template/nextjs" #Just need to pass the path from action
-       # Defining the variables required in our action
+        uses: "./.github/template/nextjs"
         with:
           envName: banshee
