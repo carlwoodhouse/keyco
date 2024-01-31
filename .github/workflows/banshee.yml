@@ -20,6 +20,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Deploy
-        uses: ./template/nextjs
+        uses: ./template/deploy
         with:
           envName: banshee
