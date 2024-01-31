@@ -1,0 +1,44 @@
+name: luccia
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+      branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  schedule:
+      - cron:  '*/20 * * * *'
+
+concurrency:
+  group:  ${{ vars.GUILD_NAME }}
+  cancel-in-progress: true
+  
+env: 
+  GUILD_NAME: ${{ vars.GUILD_NAME }}
+  GUILD_REALM: ${{ vars.GUILD_REALM }}
+  GUILD_REGION: ${{ vars.GUILD_REGION }}
+  GUILD_RAIDER_RANKS: "${{ vars.GUILD_RAIDER_RANKS }}"
+  GUILD_SOCIAL_RANKS: "${{ vars.GUILD_SOCIAL_RANKS }}"
+  GUILD_ALT_RANKS: "${{ vars.GUILD_ALT_RANKS }}"
+  ADDITIONAL_CHARACTERS: "${{ vars.ADDITIONAL_CHARACTERS }}"
+  RANK_OVERRIDE: "${{ vars.RANK_OVERRIDE }}"
+  NEXT_PUBLIC_GUILD_NAME: ${{ vars.GUILD_NAME }}
+  NEXT_PUBLIC_GUILD_REALM: ${{ vars.GUILD_REALM }}
+  NEXT_PUBLIC_GUILD_REGION: ${{ vars.GUILD_REGION }}
+      
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: luccia
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+
+      - name: Deploy
+        uses: "./.github/template/deploy"
+        with:
+          sasUrl: ${{ secrets.DEPLOY_SAS_URL }}
