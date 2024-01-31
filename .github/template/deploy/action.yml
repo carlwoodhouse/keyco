@@ -3,21 +3,12 @@ name: deploy
 inputs:
   envName:
     required: true
-    
-env: 
-  GUILD_NAME: ${{ vars.GUILD_NAME }}
-  GUILD_REALM: ${{ vars.GUILD_REALM }}
-  GUILD_REGION: ${{ vars.GUILD_REGION }}
-  GUILD_RAIDER_RANKS: "${{ vars.GUILD_RAIDER_RANKS }}"
-  GUILD_SOCIAL_RANKS: "${{ vars.GUILD_SOCIAL_RANKS }}"
-  GUILD_ALT_RANKS: "${{ vars.GUILD_ALT_RANKS }}"
-  ADDITIONAL_CHARACTERS: "${{ vars.ADDITIONAL_CHARACTERS }}"
-  RANK_OVERRIDE: "${{ vars.RANK_OVERRIDE }}"
 
 runs:
   using: "composite"
   steps:
     - name: Detect package manager
+      shell: bash
       id: detect-package-manager
       run: |
         if [ -f "${{ github.workspace }}/yarn.lock" ]; then
@@ -50,11 +41,14 @@ runs:
         restore-keys: |
           ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
     - name: Install dependencies
+      shell: bash    
       run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
     - name: Build with Next.js
       run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      shell: bash
     - name: Static HTML export with Next.js
       run: ${{ steps.detect-package-manager.outputs.runner }} next export
+      shell: bash
     - name: Deploy to Azure
       uses: TravisSpomer/deploy-to-azure-storage@v1.5.0
       with:
