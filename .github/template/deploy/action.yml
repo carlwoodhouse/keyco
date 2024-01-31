@@ -3,6 +3,9 @@ name: deploy
 inputs:
   envName:
     required: true
+  sasUrl:
+    required: true
+
 
 runs:
   using: "composite"
@@ -53,4 +56,4 @@ runs:
       uses: TravisSpomer/deploy-to-azure-storage@v1.5.0
       with:
         source-path: build
-        sas-url: ${{ secrets.DEPLOY_SAS_URL }}
+        sas-url: ${{ inputs.sasUrl }}

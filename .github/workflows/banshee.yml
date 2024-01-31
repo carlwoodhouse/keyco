@@ -34,3 +34,4 @@ jobs:
         uses: "./.github/template/deploy"
         with:
           envName: banshee
+          sasUrl: ${{ secrets.DEPLOY_SAS_URL }}
