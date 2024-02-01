@@ -16,7 +16,7 @@ export default class rioGuild {
 
     let rg = await client.getGuild(this.name, this.realm);
     let rgMembers = rg.members;
-    this.members = await Promise.all(rgMembers.filter(r => this.getAllRanks().includes(r.rank)).map(async x => await rioCharacter.initialize(x.character.name, x.character.realm, x.rank)).filter(x => x != null));
+    this.members = await Promise.all(rgMembers.filter(r => this.getAllRanks().includes(r.rank)).map(async x => await rioCharacter.initialize(x.character.name, x.character.realm, x.rank)).filter(x => x !== null));
 
     let additionalMembers = await this.populateAdditionalMembers();
     this.members = this.members.concat(additionalMembers);
@@ -75,7 +75,10 @@ export default class rioGuild {
         // name|realm|rank
         let keyParts = csvToArray(x, "|");
         let member = await rioCharacter.initialize(keyParts[0], keyParts[1], Number(keyParts[2]));
-        addMembers.push(member);
+
+        if (member !== null) {
+          addMembers.push(member);
+        }
       }
     }
 
