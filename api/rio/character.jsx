@@ -50,6 +50,10 @@ class rioCharacter {
     }
 
     static async initialize(name, realm, rank) {
+        if (name.contains("-")) {
+            return null;
+        }
+
         try {
             const client = new rioClient();
             const rioChar = await client.getCharacter(name, realm);
