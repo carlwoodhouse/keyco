@@ -39,22 +39,27 @@ export default class presentationRoster {
         });
 
         tree.forEach(chr => {
-            if (raiderRanks.includes(chr.rank)) {
-                chr.updateAlts(chr.alts.filter(c => c.mp_score > 0));
-                fixedTree.push(chr);
-            }
-            else {
-                if (chr.getAltCount() > 0) {
-                    var chrAlts = chr.alts;
-                    const realMain = chrAlts.filter(a => raiderRanks.includes(a.rank))[0];
+            try {
+                if (raiderRanks.includes(chr.rank)) {
+                    chr.updateAlts(chr.alts.filter(c => c.mp_score > 0));
+                    fixedTree.push(chr);
+                }
+                else {
+                    if (chr.getAltCount() > 0) {
+                        var chrAlts = chr.alts;
+                        const realMain = chrAlts.filter(a => raiderRanks.includes(a.rank))[0];
 
-                    if (realMain !== undefined) {
-                        var alts = chrAlts.filter(x => x.name !== realMain.name);
-                        chr.updateAlts([]);
-                        realMain.updateAlts((alts.concat(chr)).filter(c => c.mp_score > 0));
-                        fixedTree.push(realMain);
+                        if (realMain !== undefined) {
+                            var alts = chrAlts.filter(x => x.name !== realMain.name);
+                            chr.updateAlts([]);
+                            realMain.updateAlts((alts.concat(chr)).filter(c => c.mp_score > 0));
+                            fixedTree.push(realMain);
+                        }
                     }
                 }
+            }
+            catch {
+                console.log(chr);
             }
         });
 
