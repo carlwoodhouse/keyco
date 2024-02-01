@@ -9,7 +9,7 @@ class HeaderBanner extends Component  {
             <Head>
                 <title>{GUILD_NAME} - great vault tracker</title>
             </Head>
-            <img src={ "/" + GUILD_NAME.replace(" ",  "").toLowerCase() + ".webp" } className="img-fluid" alt="..."></img>
+            <img src={ "/" + GUILD_NAME.replaceAll(" ",  "").toLowerCase() + ".webp" } className="img-fluid" alt="..."></img>
             </>
         )
     }
