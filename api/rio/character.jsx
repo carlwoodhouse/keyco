@@ -50,7 +50,7 @@ class rioCharacter {
     }
 
     static async initialize(name, realm, rank) {
-        if (name.contains("-")) {
+        if (name.indexOf("-") !== -1) {
             return null;
         }
 
