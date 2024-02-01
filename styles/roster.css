@@ -46,12 +46,12 @@ table.roster .icon {
     -webkit-transition: all 2s;
 }
 
-table th {
+table.roster th {
     color: #afbfcd;
     border-color: #89ffda;
 }
 
-table td {
+table.roster td {
     color: #afbfcd;
 }
 
