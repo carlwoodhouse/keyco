@@ -45,6 +45,7 @@ class rioCharacter {
         catch (error) {
             console.log(error);
             console.log(rioChar);
+            throw error;
         }
     }
 
