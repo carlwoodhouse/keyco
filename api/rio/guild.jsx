@@ -35,7 +35,7 @@ export default class rioGuild {
 
       this.members.forEach(chr => {
         rankOverides.forEach(ro => {
-          if (ro[0] == chr.name && ro[1] == slug(chr.realm))
+          if (ro[0] == chr.name && ro[1] == slug(chr.realm) )
           {
             chr.rank = parseInt(ro[2]);
           }
@@ -50,7 +50,7 @@ export default class rioGuild {
   }
 
   getRaiders() {
-    return this.members.filter(c => this.raidRanks.includes(c.rank));
+    return this.members.filter(c => c !== null && c.rank !== undefined && this.raidRanks.includes(c.rank));
   }
 
   getRaiderRanks() {
@@ -58,7 +58,7 @@ export default class rioGuild {
   }
 
   getAlts() {
-    return this.members.filter(c => this.altRanks.includes(c.rank));
+    return this.members.filter(c => c !== null && c.rank !== undefined && this.altRanks.includes(c.rank));
   }
 
   getMembers() {
