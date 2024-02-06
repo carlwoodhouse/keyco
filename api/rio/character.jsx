@@ -62,7 +62,7 @@ class rioCharacter {
                 return null;
             }
 
-            const main = await client.getCharacterMain(name, slug(realm));
+            const main = process.env.DISABLE_ALTLINKING == undefined ? await client.getCharacterMain(name, slug(realm)) : null;
 
             if (main != null) {
                 console.log("map: " + name + " > " + main)
