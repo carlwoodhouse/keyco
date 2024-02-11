@@ -1,4 +1,3 @@
-import { val } from "cheerio/lib/api/attributes";
 import { characterScoreCompare, csvToArray } from "../../utils";
 
 class Character {
