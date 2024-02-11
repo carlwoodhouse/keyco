@@ -1,3 +1,4 @@
+import { val } from "cheerio/lib/api/attributes";
 import { characterScoreCompare, csvToArray } from "../../utils";
 
 class Character {
@@ -9,7 +10,7 @@ class Character {
     this.rank = rioCharacter.getRank();
 
     this.ilvl = rioCharacter.getGearLevel();
-    this.tierCount = rioCharacter.getCurrentTierCount();
+    this.tierCount = rioCharacter.getCurrentTierCount() ?? 0;
 
     this.mp_tens = rioCharacter.getMythicPlus10();
     this.mp_sixteens = rioCharacter.getMythicPlus16();
@@ -32,6 +33,30 @@ class Character {
 
   updateAlts(alts) {
     this.alts = alts;
+  }
+
+  validate() {
+    var valid = true;
+
+    this.validateProp(valid, this.name);
+    this.validateProp(valid, this.class);
+    this.validateProp(valid, this.spec);
+    this.validateProp(valid, this.realm);
+    this.validateProp(valid, this.ilvl);
+
+    this.validateProp(valid, this.mp_tens);
+    this.validateProp(valid, this.mp_sixteens);
+    this.validateProp(valid, this.mp_myth);
+    this.validateProp(valid, this.mp_max);
+    this.validateProp(valid, this.mp_twenties);
+    this.validateProp(valid, this.mp_total);
+    this.validateProp(valid, this.mp_score);
+
+    return valid;
+  }
+
+  validateProp(valid, prop) {
+    valid = valid && prop !== undefined && prop !== null;
   }
 }
 

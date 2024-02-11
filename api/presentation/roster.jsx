@@ -12,7 +12,7 @@ export default class presentationRoster {
         const characters = guild.getRaiders().concat(guild.getAlts());
 
         const charsWhoCouldBeAlts = characters.filter(x => x.getMain() != null);
-        const charsWhoCouldBeMains = characters.filter(x => x.getMain() == null);;
+        const charsWhoCouldBeMains = characters.filter(x => x.getMain() == null);
 
         const tree = charsWhoCouldBeMains.map(x => new Character(x, charsWhoCouldBeAlts));
 
@@ -42,7 +42,10 @@ export default class presentationRoster {
             try {
                 if (raiderRanks.includes(chr.rank)) {
                     chr.updateAlts(chr.alts.filter(c => c.mp_score > 0));
-                    fixedTree.push(chr);
+
+                    if (chr.validate()) {
+                        fixedTree.push(chr);
+                    }
                 }
                 else {
                     if (chr.getAltCount() > 0) {
@@ -53,7 +56,10 @@ export default class presentationRoster {
                             var alts = chrAlts.filter(x => x.name !== realMain.name);
                             chr.updateAlts([]);
                             realMain.updateAlts((alts.concat(chr)).filter(c => c.mp_score > 0));
-                            fixedTree.push(realMain);
+
+                            if (realMain.validate()) {
+                                fixedTree.push(realMain);
+                            }
                         }
                     }
                 }
