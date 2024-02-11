@@ -43,7 +43,7 @@ export default class presentationRoster {
                 if (raiderRanks.includes(chr.rank)) {
                     chr.updateAlts(chr.alts.filter(c => c.mp_score > 0));
 
-                    if (chr.validate()) {
+                    if (chr.validate() == true) {
                         fixedTree.push(chr);
                     }
                 }
@@ -57,7 +57,7 @@ export default class presentationRoster {
                             chr.updateAlts([]);
                             realMain.updateAlts((alts.concat(chr)).filter(c => c.mp_score > 0));
 
-                            if (realMain.validate()) {
+                            if (realMain.validate() == true()) {
                                 fixedTree.push(realMain);
                             }
                         }
