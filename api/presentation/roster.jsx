@@ -64,7 +64,8 @@ export default class presentationRoster {
                     }
                 }
             }
-            catch {
+            catch (err) {
+                console.log(err);
                 console.log(chr);
             }
         });

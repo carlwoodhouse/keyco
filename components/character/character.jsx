@@ -1,4 +1,4 @@
-import { characterScoreCompare, csvToArray } from "../../utils";
+import { characterScoreCompare } from "../../utils";
 
 class Character {
   constructor(rioCharacter, alts) {
@@ -37,25 +37,35 @@ class Character {
   validate() {
     var valid = true;
 
-    this.validateProp(valid, this.name);
-    this.validateProp(valid, this.class);
-    this.validateProp(valid, this.spec);
-    this.validateProp(valid, this.realm);
-    this.validateProp(valid, this.ilvl);
+    let props = [
+      this.name,
+      this.class,
+      this.spec,
+      this.realm,
+      this.ilvl
 
-    this.validateProp(valid, this.mp_tens);
-    this.validateProp(valid, this.mp_sixteens);
-    this.validateProp(valid, this.mp_myth);
-    this.validateProp(valid, this.mp_max);
-    this.validateProp(valid, this.mp_twenties);
-    this.validateProp(valid, this.mp_total);
-    this.validateProp(valid, this.mp_score);
+    ];
 
-    return valid;
+    for (const p of props) {
+      valid = this.validateProp(p);
+
+      if (!valid) {
+        break;
+      }
+    }
+
+    // this.validateProp(valid, this.mp_tens);
+    // this.validateProp(valid, this.mp_sixteens);
+    // this.validateProp(valid, this.mp_myth);
+    // this.validateProp(valid, this.mp_max);
+    // this.validateProp(valid, this.mp_twenties);
+    // this.validateProp(valid, this.mp_total);
+    // this.validateProp(valid, this.mp_score);
+
   }
 
-  validateProp(valid, prop) {
-    valid = valid && prop !== undefined && prop !== null;
+  validateProp(prop) {
+    return prop !== undefined && prop !== null;
   }
 }
 
