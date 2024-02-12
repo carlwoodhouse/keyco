@@ -34,8 +34,6 @@ export default class rioGuild {
         rankOverides.push(csvToArray(x, "|"));
       }
 
-      console.log(this.members);
-
       this.members.forEach(chr => {
         rankOverides.forEach(ro => {
           if (ro[0] == chr.name && ro[1] == slug(chr.realm) )
