@@ -43,7 +43,6 @@ class Character {
       this.spec,
       this.realm,
       this.ilvl
-
     ];
 
     for (const p of props) {
@@ -53,6 +52,8 @@ class Character {
         break;
       }
     }
+
+    return valid;
 
     // this.validateProp(valid, this.mp_tens);
     // this.validateProp(valid, this.mp_sixteens);
