@@ -41,7 +41,7 @@ export default class presentationRoster {
         tree.forEach(chr => {
             try {
                 if (raiderRanks.includes(chr.rank)) {
-                    chr.updateAlts(chr.alts.filter(c => c.mp_score > 0));
+                    chr.updateAlts(chr.alts.filter(c => c.mp_score > 0 && c.validate() == true));
 
                     if (chr.validate() == true) {
                         fixedTree.push(chr);
@@ -55,7 +55,7 @@ export default class presentationRoster {
                         if (realMain !== undefined) {
                             var alts = chrAlts.filter(x => x.name !== realMain.name);
                             chr.updateAlts([]);
-                            realMain.updateAlts((alts.concat(chr)).filter(c => c.mp_score > 0));
+                            realMain.updateAlts((alts.concat(chr)).filter(c => c.mp_score > 0 && c.validate() == true));
 
                             if (realMain.validate() == true()) {
                                 fixedTree.push(realMain);
