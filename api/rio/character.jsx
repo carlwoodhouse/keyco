@@ -3,7 +3,7 @@ import { round } from '../../utils';
 import rioClient from './client'
 
 let counter = 0;
-let currentTier = 31
+let currentTier = 32;
 
 class rioCharacter {
     constructor(name, realm, rank, rioChar, main) {
@@ -170,21 +170,19 @@ function calcMythicPlus(rioChar) {
     for (let j = 0; j < rioChar.mythic_plus_weekly_highest_level_runs.length; j++) {
         var run = rioChar.mythic_plus_weekly_highest_level_runs[j];
 
-        if (run.mythic_level > 9 && run.mythic_level < 16) {
+        if (run.mythic_level > 2 && run.mythic_level < 5) {
             mythicplus[0] = mythicplus[0] + 1;
         }
 
-        if (run.mythic_level > 15 && run.mythic_level < 18) {
+        if (run.mythic_level > 4 && run.mythic_level < 8) {
             mythicplus[1] = mythicplus[1] + 1;
         }
         
-        
-        if (run.mythic_level > 17 && run.mythic_level < 20) {
+        if (run.mythic_level > 7 && run.mythic_level < 10) {
             mythicplus[2] = mythicplus[2] + 1;
         }
 
-
-        if (run.mythic_level > 19) {
+        if (run.mythic_level > 9) {
             mythicplus[3] = mythicplus[3] + 1;
         }
 
