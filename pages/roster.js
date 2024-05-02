@@ -25,7 +25,7 @@ export default function Home({ raiders, lastUpdated }) {
               <th scope="col">score</th>
               <th scope="col">name</th>
               <th scope="col">ilvl</th>
-              <th scope="col">t31</th>
+              <th scope="col">t31.5</th>
               <th scope="col">m+ (18-19)</th>
               <th scope="col">m+ (20+)</th>
               <th scope="col">m+ (max)</th>
