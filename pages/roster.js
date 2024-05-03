@@ -38,7 +38,7 @@ export default function Home({ raiders, lastUpdated }) {
           raiders.map((user, index) => (
             // these rows should become components tbh
             <>
-              <tr key={ "char-" + user.name } className={user.class.toLowerCase().replace(" ", "-") + (index !== 0 && index % 2 != 0 ? " striped" : "") } data-bs-toggle="collapse" data-bs-target={ ".char-" + user.name.toLowerCase() }>
+              <tr key={ "char-" + user.name + "-" + user.realm } className={user.class.toLowerCase().replace(" ", "-") + (index !== 0 && index % 2 != 0 ? " striped" : "") } data-bs-toggle="collapse" data-bs-target={ ".char-" + user.name.toLowerCase() }>
                 {user.alts.length > 0 
                   ? <td scope="row"><Icon.ChevronDown /></td>
                   : <td scope="row">&nbsp;</td>
@@ -59,7 +59,7 @@ export default function Home({ raiders, lastUpdated }) {
                 </td>
               </tr>
               {user.alts.map((alt) => (
-                <tr key={ "char-" + alt.name } className={ "collapse accordian-collapse alt char-" + user.name.toLowerCase() + " " + alt.class.toLowerCase().replace(" ", "-") + (index !== 0 && index % 2 != 0 ? " striped" : "")} data-bs-parent=".table">
+                <tr key={ "char-" + alt.name + "-" + alt.realm } className={ "collapse accordian-collapse alt char-" + user.name.toLowerCase() + " " + alt.class.toLowerCase().replace(" ", "-") + (index !== 0 && index % 2 != 0 ? " striped" : "")} data-bs-parent=".table">
                   <td scope="row">&nbsp;</td>
                   <td>{alt.mp_score}</td>
                   <td className='class'>{alt.name}</td>

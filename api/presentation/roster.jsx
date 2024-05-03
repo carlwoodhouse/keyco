@@ -53,11 +53,11 @@ export default class presentationRoster {
                         const realMain = chrAlts.filter(a => raiderRanks.includes(a.rank))[0];
 
                         if (realMain !== undefined) {
-                            var alts = chrAlts.filter(x => x.name !== realMain.name);
+                            var alts = chrAlts.filter(x => x.name !== realMain.name && x.realm !== realMain.realm);
                             chr.updateAlts([]);
                             realMain.updateAlts((alts.concat(chr)).filter(c => c.mp_score > 0 && c.validate() == true));
 
-                            if (realMain.validate() == true()) {
+                            if (realMain.validate() == true) {
                                 fixedTree.push(realMain);
                             }
                         }
