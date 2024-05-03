@@ -3,7 +3,7 @@ import { round } from '../../utils';
 import rioClient from './client'
 
 let counter = 0;
-let currentTier = 31_5
+let currentTier = "31_5";
 
 class rioCharacter {
     constructor(name, realm, rank, rioChar, main) {
