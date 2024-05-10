@@ -26,8 +26,8 @@ export default function Home({ raiders, lastUpdated }) {
               <th scope="col">name</th>
               <th scope="col">ilvl</th>
               <th scope="col">t31.5</th>
-              <th scope="col">m+ (18-19)</th>
-              <th scope="col">m+ (20+)</th>
+              <th scope="col">m+ (8-9)</th>
+              <th scope="col">m+ (10+)</th>
               <th scope="col">m+ (max)</th>
               <th scope="col">m+ (total)</th>
               <th scope="col">tools</th>
