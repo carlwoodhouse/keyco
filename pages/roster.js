@@ -81,6 +81,7 @@ export default function Home({ raiders, lastUpdated }) {
       ))}
           </tbody>
         </table>
+        
         <nav className="navbar navbar-dark fixed-bottom bg-dark">
           <div className="container-fluid">
             <a className="navbar-brand" href="https://raider.io/banshee" target="_blank">Updated: {lastUpdated}</a>

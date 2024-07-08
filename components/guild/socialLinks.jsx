@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import ArmoryLink from '../guildLinks/armoryLink';
 import RaiderIOLink from '../guildLinks/raiderioLink';
-const GUILD_NAME = "dd";
-const GUILD_REALM = "XXX"
 
 class SocialLinks extends Component  {
     render() {
