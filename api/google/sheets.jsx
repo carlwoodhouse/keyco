@@ -5,7 +5,7 @@ export default class googleSheetsClient {
 
   static async getSheetData(spreadsheetId, range) {
     const glAuth = await google.auth.getClient({
-        projectId: "YOUR_PROJECT_ID",
+        projectId: process.env.GOOGLE_PROJECT_ID,
         credentials: {
             "type": "service_account",
             "project_id": process.env.GOOGLE_PROJECT_ID,

@@ -16,6 +16,15 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: "/signups",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "nocache",
+          },
+        ],
+      },
     ];
   },
   async redirects() {
