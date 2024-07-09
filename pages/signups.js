@@ -8,8 +8,9 @@ import HeaderBanner from '../components/header/headerBanner';
 import presentationSignups from '../api/presentation/signups';
 import RaidBotsLink from '../components/characterLink/raidbotsLink';
 import RaiderIOLink from '../components/characterLink/raiderioLink';
-import RosterBuffs from '../components/roster/buffs'
-import RosterUtility from '../components/roster/utility'
+import RosterBuffs from '../components/roster/buffs';
+import RosterUtility from '../components/roster/utility';
+import RosterArmourTypes from '../components/roster/armour';
 
 const GUILD_NAME = process.env.NEXT_PUBLIC_GUILD_NAME;
 const GUILD_REALM = process.env.NEXT_PUBLIC_GUILD_REALM;
@@ -19,36 +20,39 @@ export default function Home({ raiders, lastUpdated }) {
   return (
     <div className="container-fluid p-0">
       <HeaderBanner />
-      <div className="row">
-      <div class="col">
-        <div className="table-responsive">
-          <table className="table table-dark table-hover roster">
-            <thead>
-              <tr>
-                <th scope="col">name</th>
-                <th scope="col">class</th>
-                <th scope="col">role</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                raiders.map((user, index) => (
-                  <>
-                    <tr key={"char-" + user.name + "-" + user.realm} className={user.class.toLowerCase().replace(" ", "-") + (index !== 0 && index % 2 != 0 ? " striped" : "")} data-bs-toggle="collapse" data-bs-target={".char-" + user.name.toLowerCase()}>
-                      <td className='class'>{user.name}</td>
-                      <td className='class'  >{user.class}</td>
-                      <td>{user.role}</td>
-                    </tr>
-                  </>
-                ))}
-            </tbody>
-          </table>
-        </div>
-        </div>
-        <div class="col">
-        <RosterBuffs raiders={raiders} />
-        <RosterUtility raiders={raiders} />
+      <div className="row m-0">
+        <div class="col-12 col-lg-6">
+          <div className="table-responsive">
+            <table className="table table-dark table-hover roster">
+              <thead>
+                <tr>
+                  <th scope="col">name</th>
+                  <th scope="col">class</th>
+                  <th scope="col">role</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  raiders.map((user, index) => (
+                    <>
+                      <tr key={"char-" + user.name + "-" + user.realm} className={user.class.toLowerCase().replace(" ", "-") + (index !== 0 && index % 2 != 0 ? " striped" : "")} data-bs-toggle="collapse" data-bs-target={".char-" + user.name.toLowerCase()}>
+                        <td className='class'>{user.name}</td>
+                        <td className='class'  >{user.class}</td>
+                        <td>{user.role}</td>
+                      </tr>
+                    </>
+                  ))}
+              </tbody>
+            </table>
           </div>
+        </div>
+        <div class="col-12 col-lg-3">
+          <RosterBuffs raiders={raiders} />
+          <RosterArmourTypes raiders={raiders} />
+        </div>
+        <div class="col-12 col-lg-3">
+          <RosterUtility raiders={raiders} />
+        </div>
       </div>
 
       <nav className="navbar navbar-dark fixed-bottom bg-dark">
