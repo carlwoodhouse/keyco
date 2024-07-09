@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ArmoryLink from '../guildLinks/armoryLink';
-import RaiderIOLink from '../guildLinks/raiderioLink';
+import ArmoryLink from './armoryLink';
+import RaiderIOLink from './raiderioLink';
 import { slug } from '../../utils';
 
 class SocialLinks extends Component  {

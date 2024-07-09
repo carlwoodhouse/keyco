@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SocialLinks from '../guild/socialLinks';
+import SocialLinks from '../guildLinks/socialLinks';
 
 const GUILD_NAME = process.env.NEXT_PUBLIC_GUILD_NAME;
 const GUILD_REALM = process.env.NEXT_PUBLIC_GUILD_REALM;
