@@ -19,7 +19,7 @@ export function characterScoreCompare(a, b) {
   }
   
 export function slug(str) {
-    return str.replace(" ", "-").toLowerCase();
+    return str.replaceAll(" ", "-").toLowerCase();
 }
 
 export function round(value, precision) {
