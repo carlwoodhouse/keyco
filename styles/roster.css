@@ -27,6 +27,10 @@ span.squiggle {
     font-family: 'Dancing Script', cursive;
 }
 
+span.class {
+    padding-right: 5px;
+}
+
 /* table styles */
 
 table.roster tr, table.roster td {
@@ -47,7 +51,7 @@ table.roster .icon {
     margin-right: 3px;
 }
 
-table.roster.tracker {
+table.roster.tracker .icon {
     filter: gray; /* IE6-9 */
     -webkit-filter: grayscale(1); /* Google Chrome & Safari 6+ */
     -webkit-transition: all 2s;
@@ -62,54 +66,54 @@ table.roster td, table.buffs td {
     color: #afbfcd;
 }
 
-table tr.death-knight td.class {
+table tr.death-knight td.class, span.death-knight {
     color: #C41E3A;
 }
 
-table tr.demon-hunter td.class {
+table tr.demon-hunter td.class, span.demon-hunter {
     color: #A330C9;
 }
 
-table tr.druid td.class {
+table tr.druid td.class, span.druid   {
     color: #FF7C0A;
 }
 
-table tr.evoker td.class {
+table tr.evoker td.class, span.evoker {
     color: #33937F	;
 }
 
-table tr.hunter td.class {
+table tr.hunter td.class, span.hunter {
     color: #AAD372;
 }
 
-table tr.mage td.class {
+table tr.mage td.class, span.mage {
     color: #3FC7EB;
 }
 
-table tr.monk td.class {
+table tr.monk td.class, span.monk {
     color: #00FF98;
 }
 
-table tr.paladin td.class {
+table tr.paladin td.class, span.paladin {
     color: #F48CBA;
 }
 
-table tr.priest td.class {
+table tr.priest td.class, span.priest {
     color: white;
 }
 
-table tr.rogue td.class {
+table tr.rogue td.class, span.rogue {
     color: #FFF468;
 }
 
-table tr.shaman td.class {
+table tr.shaman td.class, span.shaman {
     color: #0070DD;
 }
 
-table tr.warlock td.class {
+table tr.warlock td.class, span.warlock {
     color: #8788EE;
 }
 
-table tr.warrior td.class {
+table tr.warrior td.class, span.warrior {
     color: #C69B6D;
 }

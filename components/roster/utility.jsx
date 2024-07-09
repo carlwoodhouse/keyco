@@ -11,7 +11,7 @@ class RosterUtility extends Component {
     }
 }
 
-class RosterUtilities extends Component  {
+export default class RosterUtilities extends Component  {
     render() {
         let brCount = this.props.raiders.filter(x => ["Warlock", "Death Knight", "Druid", "Paladin"].includes(x.class)).length;
         let lustCount = this.props.raiders.filter(x => ["Mage", "Evoker", "Hunter", "Shaman"].includes(x.class)).length;
@@ -28,7 +28,7 @@ class RosterUtilities extends Component  {
             </thead>
             <tbody>
                 <RosterUtility count={brCount} description="Battle Rez" />
-                <RosterUtility count={lustCount} description="Bloodlust/Heroism" />
+                <RosterUtility count={lustCount} description="Bloodlust / Heroism" />
                 <RosterUtility count={this.props.raiders.filter(x => x.class == "Warlock").length} description="Healthstones / Gateway" />
                 <RosterUtility count={movementCount} description="Raid Moverment CD" />
                 <RosterUtility count={immuCount} description="Immunity" />
@@ -37,5 +37,4 @@ class RosterUtilities extends Component  {
     }
 }
 
-export default RosterUtilities
 
