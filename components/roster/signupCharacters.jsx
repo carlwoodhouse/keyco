@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RoleIcon from '../icons/roleIcon';
 
 class SignupCharacters extends Component  {
     render() {
@@ -19,7 +20,7 @@ class SignupCharacters extends Component  {
                       <tr key={"char-" + raider.name} className={getCssClass(raider, index)} >
                         <td className='class'>{raider.name}</td>
                         <td className='class'  >{raider.class}</td>
-                        <td>{raider.role}</td>
+                        <td><RoleIcon role={raider.role} /></td>
                       </tr>
                     </>
                   ))}

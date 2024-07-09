@@ -13,12 +13,9 @@ const GUILD_NAME = process.env.NEXT_PUBLIC_GUILD_NAME;
 const GUILD_REALM = process.env.NEXT_PUBLIC_GUILD_REALM;
 
 
-export default function Home({ raiders, trials, lastUpdated }) {
-  console.log(trials);
+export default function Home({ raiders, trials }) {
   return (
-    <div className="container-fluid p-0">
-      <HeaderBanner />
-      <div className="row m-0">
+      <div className="row">
         <div class="col-12 col-lg-6">
           <SignupCharacters raiders={raiders} />
           <h4>Trialists</h4>
@@ -32,14 +29,6 @@ export default function Home({ raiders, trials, lastUpdated }) {
           <RosterUtility raiders={raiders} />
         </div>
       </div>
-
-      <nav className="navbar navbar-dark fixed-bottom bg-dark">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#" target="_blank">Updated: {lastUpdated}</a>
-          <SocialLinks guildName={GUILD_NAME} guildRealm={GUILD_REALM} />
-        </div>
-      </nav>
-    </div>
   );
 }
 
@@ -52,8 +41,7 @@ export async function getStaticProps({ query }) {
   return {
     props: {
       raiders: JSON.parse(JSON.stringify(raiders)),
-      trials: JSON.parse(JSON.stringify(trials)),
-      lastUpdated: (new Date()).toLocaleString()
+      trials: JSON.parse(JSON.stringify(trials))
     }
   }
 }
