@@ -24,6 +24,7 @@ class RosterSummaryline extends Component {
 export default class RosterSummary extends Component {
     render() {
         const tCount = this.props.raiders.filter(x => x.trial).length;
+        const lCount = this.props.raiders.filter(x => x.limited).length;
         return (
             <div className='row'>
                 <div className='col-12'>
@@ -39,15 +40,14 @@ export default class RosterSummary extends Component {
                             <RosterSummarylineByRole raiders={this.props.raiders} role="Dps" />
                             <RosterSummarylineByRole raiders={this.props.raiders} role="Healer" />
                             <RosterSummaryline count={tCount} description="Trialist" />
-                            <RosterSummaryline count={this.props.raiders.filter(x => x.limited).length} description="Limited Availability" cssClass="limited" />
+                            <RosterSummaryline count={lCount} description="Limited Availability" cssClass="limited" />
                         </tbody>
                     </table>
-                    <div className='mt-0 py-1 px-2 hcbg'>
-                <p class="font-monospace lh-sm fs-4 text-center">{this.props.raiders.length}x total raiders of which {tCount} are trialists and 4 have limited availability.</p>
-         
+                    <div className='py-1 px-2 hcbg'>
+                        <p class="font-monospace lh-sm fs-4 text-center">{this.props.raiders.length}x total raiders of which {tCount} are trialists and 4 have limited availability.</p>
+                    </div>
                 </div>
-                </div>
-               
+
             </div>
         )
     }
