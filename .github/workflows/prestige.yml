@@ -1,4 +1,4 @@
-name: banshee
+name: prestige
 
 on:
   # Runs on pushes targeting the default branch
@@ -12,7 +12,7 @@ on:
       - cron:  '*/20 * * * *'
 
 concurrency:
-  group: banshee
+  group: prestige
   cancel-in-progress: true
   
 env: 
