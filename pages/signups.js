@@ -1,13 +1,9 @@
 import Image from 'next/image'
 import * as Icon from 'react-bootstrap-icons';
 
-import WarcraftlogsLink from '../components/characterLink/warcraftLogsLink';
-import ArmoryLink from '../components/characterLink/armoryLink';
 import SocialLinks from '../components/guild/socialLinks';
 import HeaderBanner from '../components/header/headerBanner';
 import presentationSignups from '../api/presentation/signups';
-import RaidBotsLink from '../components/characterLink/raidbotsLink';
-import RaiderIOLink from '../components/characterLink/raiderioLink';
 import RosterBuffs from '../components/roster/buffs';
 import RosterUtility from '../components/roster/utility';
 import RosterArmourTypes from '../components/roster/armour';
