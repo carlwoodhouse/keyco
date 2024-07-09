@@ -32,7 +32,6 @@ class RosterBuffs extends Component  {
                 <RosterBuff raiders={this.props.raiders} buffClass="Shaman" buffDescription="Skyfury (Autoattack / 2% Mastery)" />
                 <RosterBuff raiders={this.props.raiders} buffClass="Paladin" buffDescription="Damage Reduction" />
                 <RosterBuff raiders={this.props.raiders} buffClass="Rogue" buffDescription="Damage Reduction Chance (Poison)" />
-                <RosterBuff raiders={this.props.raiders} buffClass="foooo" buffDescription="Damage Reduction Chance (Poison)" />
             </tbody>
         </table>)
     }

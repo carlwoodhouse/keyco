@@ -1,43 +1,40 @@
 import React, { Component } from 'react';
 import RoleIcon from '../icons/roleIcon';
 
-class SignupCharacters extends Component  {
+class SignupCharacters extends Component {
     render() {
         return (
             <div className="table-responsive">
-            <table className="table table-dark table-hover roster">
-              <thead>
-                <tr>
-                  <th scope="col">name</th>
-                  <th scope="col">&nbsp;</th>
-                  <th scope="col">&nbsp;</th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  this.props.raiders.map((raider, index) => (
-                    <>
-                      <tr key={"char-" + raider.name} className={getCssClass(raider, index)} >
-                        <td className='class'>{raider.name}</td>
-                        <td className='class'  >{raider.class}</td>
-                        <td><RoleIcon role={raider.role} /></td>
-                      </tr>
-                    </>
-                  ))}
-              </tbody>
-            </table>
-          </div>
+                <table className="table table-dark table-hover roster">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">&nbsp;</th>
+                            <th scope="col">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            this.props.raiders.map((raider, index) => (
+                                <tr key={"char-" + raider.name} className={getCssClass(raider, index)} >
+                                    <td className='class'>{raider.name}</td>
+                                    <td className='class'  >{raider.class}</td>
+                                    <td><RoleIcon role={raider.role} /></td>
+                                </tr>
+                            ))}
+                    </tbody>
+                </table>
+            </div>
         )
     }
 }
 
-function  getCssClass(char, index) {
+function getCssClass(char, index) {
     let cl = char.class.toLowerCase().replace(' ', '-');
 
-    if (index !== 0 && index % 2 != 0)
-    {
+    if (index !== 0 && index % 2 != 0) {
         cl += " striped";
-    } 
+    }
 
     if (char.trial) {
         cl += " trial";
