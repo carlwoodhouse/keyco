@@ -4,7 +4,6 @@ import RosterUtility from '../components/roster/utility';
 import RosterArmourTypes from '../components/roster/armour';
 import SignupCharacters from '../components/roster/signupCharacters';
 import RosterSummary from '../components/roster/summary';
-import RosterTierGroups from '../components/roster/tiergroups';
 
 export default function Home({ roster, raiders, trials }) {
   return (

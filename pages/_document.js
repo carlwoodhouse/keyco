@@ -7,6 +7,7 @@ export default function Document() {
     <Html>
       <Head>
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"></link>
+        <title>{process.env.GUILD_NAME}</title>
       </Head>
       <body>
         <div className="container-fluid p-0">
@@ -21,4 +22,3 @@ export default function Document() {
     </Html>
   )
 }
-
