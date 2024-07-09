@@ -5,8 +5,6 @@ class SignupCharacter {
     this.role = character[2];
     this.trial = character[10].indexOf("Trial") != -1;
     this.limited = character[10].indexOf("Limited") != -1;
-
-    console.log(this);
   }
 }
 

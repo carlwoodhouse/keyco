@@ -37,6 +37,10 @@ table.roster tr.striped, table.table-dark tr.striped {
     --bs-table-bg: #2c3034 !important;
 }
 
+table.roster tr.limited, table.table-dark tr.limited {
+    --bs-table-bg: #352206 !important;
+}
+
 table.roster .icon {
     width: 25x;
     height: 25px;

@@ -7,40 +7,22 @@ import presentationSignups from '../api/presentation/signups';
 import RosterBuffs from '../components/roster/buffs';
 import RosterUtility from '../components/roster/utility';
 import RosterArmourTypes from '../components/roster/armour';
+import SignupCharacters from '../components/roster/signupCharacters';
 
 const GUILD_NAME = process.env.NEXT_PUBLIC_GUILD_NAME;
 const GUILD_REALM = process.env.NEXT_PUBLIC_GUILD_REALM;
 
 
-export default function Home({ raiders, lastUpdated }) {
+export default function Home({ raiders, trials, lastUpdated }) {
+  console.log(trials);
   return (
     <div className="container-fluid p-0">
       <HeaderBanner />
       <div className="row m-0">
         <div class="col-12 col-lg-6">
-          <div className="table-responsive">
-            <table className="table table-dark table-hover roster">
-              <thead>
-                <tr>
-                  <th scope="col">name</th>
-                  <th scope="col">class</th>
-                  <th scope="col">role</th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  raiders.map((user, index) => (
-                    <>
-                      <tr key={"char-" + user.name + "-" + user.realm} className={user.class.toLowerCase().replace(" ", "-") + (index !== 0 && index % 2 != 0 ? " striped" : "")} data-bs-toggle="collapse" data-bs-target={".char-" + user.name.toLowerCase()}>
-                        <td className='class'>{user.name}</td>
-                        <td className='class'  >{user.class}</td>
-                        <td>{user.role}</td>
-                      </tr>
-                    </>
-                  ))}
-              </tbody>
-            </table>
-          </div>
+          <SignupCharacters raiders={raiders} />
+          <h4>Trialists</h4>
+          <SignupCharacters raiders={trials} />
         </div>
         <div class="col-12 col-lg-3">
           <RosterBuffs raiders={raiders} />
@@ -57,21 +39,21 @@ export default function Home({ raiders, lastUpdated }) {
           <SocialLinks guildName={GUILD_NAME} guildRealm={GUILD_REALM} />
         </div>
       </nav>
-
     </div>
   );
 }
 
 export async function getStaticProps({ query }) {
   const roster = await presentationSignups.buildRosterTree();
-
-  const trialists = roster.filter(x => x.trial);
-  const limitedAvailability = roster.filter(x => x.limitedAvailability);
+  
+  const raiders = roster.filter(x => !x.trial);
+  const trials = roster.filter(x => x.trial);
 
   return {
     props: {
-      raiders: JSON.parse(JSON.stringify(roster)),
-      lastUpdated: (new Date()).toLocaleString(),
+      raiders: JSON.parse(JSON.stringify(raiders)),
+      trials: JSON.parse(JSON.stringify(trials)),
+      lastUpdated: (new Date()).toLocaleString()
     }
   }
 }
