@@ -15,7 +15,8 @@ function MyApp({ Component, pageProps }) {
     <Head>
        <meta name="viewport" content="width=device-width, initial-scale=1" />
        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin></link>
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
+       <title>{process.env.NEXT_PUBLIC_GUILD_NAME}</title>
     </Head>
     <Component {...pageProps} />
     </>
