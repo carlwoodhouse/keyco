@@ -18,7 +18,7 @@ class RosterBuffs extends Component  {
             <thead>
                 <tr>
                     <th scope='col'>Buff</th>
-                    <th scope='col'>Count</th>
+                    <th scope='col'>&nbsp;</th>
                     <th scope='col'>&nbsp;</th>
                 </tr>
             </thead>
@@ -32,7 +32,6 @@ class RosterBuffs extends Component  {
                 <RosterBuff raiders={this.props.raiders} buffClass="Shaman" buffDescription="Skyfury (Autoattack / 2% Mastery)" />
                 <RosterBuff raiders={this.props.raiders} buffClass="Paladin" buffDescription="Damage Reduction" />
                 <RosterBuff raiders={this.props.raiders} buffClass="Rogue" buffDescription="Damage Reduction Chance (Poison)" />
-                <RosterBuff raiders={this.props.raiders} buffClass="Warlock" buffDescription="Gateway / Healthstone" />
             </tbody>
         </table>)
     }

@@ -22,14 +22,14 @@ class RosterUtilities extends Component  {
             <thead>
                 <tr>
                     <th scope='col'>Utility</th>
-                    <th scope='col'>Count</th>
+                    <th scope='col'>&nbsp;</th>
                     <th scope='col'>&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
                 <RosterUtility count={brCount} description="Battle Rez" />
                 <RosterUtility count={lustCount} description="Bloodlust/Heroism" />
-                <RosterUtility count={this.props.raiders.filter(x => x.class == "Warlock").length} description="Healthstones" />
+                <RosterUtility count={this.props.raiders.filter(x => x.class == "Warlock").length} description="Healthstones / Gateway" />
                 <RosterUtility count={movementCount} description="Raid Moverment CD" />
                 <RosterUtility count={immuCount} description="Immunity" />
             </tbody>

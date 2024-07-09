@@ -64,6 +64,10 @@ export default function Home({ raiders, lastUpdated }) {
 
 export async function getStaticProps({ query }) {
   const roster = await presentationSignups.buildRosterTree();
+
+  const trialists = roster.filter(x => x.trial);
+  const limitedAvailability = roster.filter(x => x.limitedAvailability);
+
   return {
     props: {
       raiders: JSON.parse(JSON.stringify(roster)),

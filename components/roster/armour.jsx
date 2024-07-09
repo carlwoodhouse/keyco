@@ -17,7 +17,7 @@ class RosterArmourTypes extends Component  {
             <thead>
                 <tr>
                     <th scope='col'>Armour Type</th>
-                    <th scope='col'>Count</th>
+                    <th scope='col'>&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
