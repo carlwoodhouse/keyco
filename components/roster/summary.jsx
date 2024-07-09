@@ -52,7 +52,7 @@ export default class RosterSummary extends Component {
                 <div className='row'>
                     <div className='col-12'>
                         <div className='py-1 px-2 hcbg'>
-                            <p className="font-monospace lh-sm fs-4 text-center">{this.props.raiders.length}x total raiders of which {tCount} are trialists and 4 have limited availability.</p>
+                            <p className="font-monospace lh-sm fs-4 text-center">{this.props.raiders.length}x total raiders of which {tCount} are trialists and {lCount} have limited availability.</p>
                         </div>
                     </div>
                 </div>
