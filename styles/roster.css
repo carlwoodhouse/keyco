@@ -55,7 +55,7 @@ table.roster.tracker {
 
 table.roster th, table.buffs th {
     color: #afbfcd;
-    border-color: #89ffda;
+    border-color: #f65456;
 }
 
 table.roster td, table.buffs td {
@@ -113,7 +113,3 @@ table tr.warlock td.class {
 table tr.warrior td.class {
     color: #C69B6D;
 }
-
-
-
-

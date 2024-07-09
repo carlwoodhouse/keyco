@@ -5,9 +5,9 @@ class RosterBuff extends Component {
     render() {
         let buffCount = this.props.raiders.filter(x=> x.class == this.props.buffClass).length ?? 0;
         return (<tr className={this.props.buffClass.toLowerCase()}>
-                    <td className='class'>{this.props.buffDescription}</td>
-                    <td>{buffCount}</td>
-                    {buffCount == 0 ? <td><Icon.X /></td> : <td><Icon.Check2 /></td>}
+                    <td className='class'>{this.props.buffDescription}</td>         
+                    {buffCount == 0 ? <td><Icon.X color='red' /></td> : <td><Icon.Check2 color='green' /></td>}
+                    {buffCount == 0 ? <td>&nbsp;</td> : <td>x{buffCount}</td>}
                 </tr>)
     }
 }
@@ -17,7 +17,7 @@ class RosterBuffs extends Component  {
         return (<table className="table table-dark table-hover buffs">
             <thead>
                 <tr>
-                    <th scope='col'>Buff</th>
+                    <th scope='col'>Buffs</th>
                     <th scope='col'>&nbsp;</th>
                     <th scope='col'>&nbsp;</th>
                 </tr>
@@ -32,6 +32,7 @@ class RosterBuffs extends Component  {
                 <RosterBuff raiders={this.props.raiders} buffClass="Shaman" buffDescription="Skyfury (Autoattack / 2% Mastery)" />
                 <RosterBuff raiders={this.props.raiders} buffClass="Paladin" buffDescription="Damage Reduction" />
                 <RosterBuff raiders={this.props.raiders} buffClass="Rogue" buffDescription="Damage Reduction Chance (Poison)" />
+                <RosterBuff raiders={this.props.raiders} buffClass="foooo" buffDescription="Damage Reduction Chance (Poison)" />
             </tbody>
         </table>)
     }

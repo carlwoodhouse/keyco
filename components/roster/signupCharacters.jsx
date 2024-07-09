@@ -9,8 +9,8 @@ class SignupCharacters extends Component  {
               <thead>
                 <tr>
                   <th scope="col">name</th>
-                  <th scope="col">class</th>
-                  <th scope="col">role</th>
+                  <th scope="col">&nbsp;</th>
+                  <th scope="col">&nbsp;</th>
                 </tr>
               </thead>
               <tbody>

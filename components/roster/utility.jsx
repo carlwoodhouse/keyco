@@ -5,8 +5,8 @@ class RosterUtility extends Component {
     render() {
         return (<tr className='striped'>
                     <td className='class'>{this.props.description}</td>
-                    <td>{this.props.count}</td>
-                    {this.props.count == 0 ? <td><Icon.X /></td> : <td><Icon.Check2 /></td>}
+                    {this.props.count == 0 ? <td><Icon.X color='red' /></td> : <td><Icon.Check2 color='green' /></td>}
+                    {this.props.count == 0 ? <td>&nbsp;</td> : <td>x{this.props.count}</td>}
                 </tr>)
     }
 }

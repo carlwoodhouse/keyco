@@ -16,7 +16,7 @@ class RosterArmourTypes extends Component  {
         return (<table className="table table-dark table-hover buffs">
             <thead>
                 <tr>
-                    <th scope='col'>Armour Type</th>
+                    <th scope='col'>Armour Types</th>
                     <th scope='col'>&nbsp;</th>
                 </tr>
             </thead>
