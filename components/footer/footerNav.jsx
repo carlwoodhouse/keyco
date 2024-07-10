@@ -41,7 +41,7 @@ export default class FooterNav extends Component {
                                     <FooterNavItem link={rts[0]} />
                                     <FooterNavItem link={rts[1]} />
                                 </ul>
-                                <a className="navbar-text" href="#" target="_blank">Updated: {updated}</a>
+                                <a className="navbar-brand hcbg-text" href="#" target="_blank">Updated: {updated}</a>
                             </div>
                         </div>
                     </nav>

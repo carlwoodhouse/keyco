@@ -29,6 +29,10 @@ body {
   background-color: #f65456;
 }
 
+.hcbg-text {
+  color: #f65456;
+}
+
 /* banner links */
 .guildlinks {
     position: relative;
