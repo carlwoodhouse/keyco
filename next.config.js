@@ -40,7 +40,7 @@ const nextConfig = {
     {
       rd.push({ 
         source: '/signups',
-        destination: '/notfound',
+        destination: '/roster',
         permanent: false,
       });
     }
