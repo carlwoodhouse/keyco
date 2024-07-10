@@ -28,13 +28,24 @@ const nextConfig = {
     ];
   },
   async redirects() {
-    return [
+    const rd = [
       {
         source: '/',
         destination: '/roster',
         permanent: false,
       },
-    ]
+    ];
+
+    if (process.env.SIGNUP_ENABLED != "1")
+    {
+      rd.push({ 
+        source: '/signups',
+        destination: '/notfound',
+        permanent: false,
+      });
+    }
+
+    return rd;
   },
 }
 
