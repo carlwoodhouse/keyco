@@ -6,7 +6,7 @@ import { slug } from '../../utils';
 class SocialLinks extends Component  {
     render() {
         return (
-        <div className="guildlinks">
+        <div className="guildlinks d-flex">
             <span className='squiggle'>{this.props.guildName}</span>
             <RaiderIOLink name={this.props.guildName} realm={this.props.guildRealm} />
             <ArmoryLink name={this.props.guildName} realm={this.props.guildRealm} />

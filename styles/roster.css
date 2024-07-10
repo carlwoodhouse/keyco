@@ -1,32 +1,3 @@
-body {
-    padding-bottom: 40px;;
-}
-
-/* banner links */
-.guildlinks {
-    position: relative;
-    padding: 3px 3px;
-    border-radius: 60px;
-}
-
-.guildlinks img {
-    width: 30px;
-    height: 30px;
-    filter: sepia(100%);
-}
-
-.guildlinks a {
-    margin-right: 10px;
-}
-
-.guildlinks a:first-of-type {
-    margin-left: 10px;
-}
-
-span.squiggle {
-    font-family: 'Dancing Script', cursive;
-}
-
 span.class {
     padding-right: 5px;
 }
