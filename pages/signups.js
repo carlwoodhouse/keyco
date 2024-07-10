@@ -17,11 +17,11 @@ export default function Home({ roster, raiders, trials }) {
         <RosterSummary raiders={roster} />
         <div className="row">
           <div className="col-12 col-lg-6">
-            <RosterBuffs raiders={raiders} />
+            <RosterBuffs raiders={roster} />
           </div>
           <div className="col-12 col-lg-6">
-            <RosterUtility raiders={raiders} />
-            <RosterArmourTypes raiders={raiders} />
+            <RosterUtility raiders={roster} />
+            <RosterArmourTypes raiders={roster} />
           </div>
         </div>
       </div>
