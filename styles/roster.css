@@ -88,3 +88,12 @@ table tr.warlock td.class, span.warlock {
 table tr.warrior td.class, span.warrior {
     color: #C69B6D;
 }
+
+table tr.unsure, table.table-dark tr.unsure {
+    --bs-table-bg: #36454F !important;
+}
+
+
+table tr.unsure td, table.table-dark tr.unsure td {
+    color: #7393B3 !important;
+}
