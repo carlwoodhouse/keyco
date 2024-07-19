@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { slug } from '../../utils';
 import * as Icon from 'react-bootstrap-icons';
 
 class RosterBuff extends Component {
     render() {
         let buffCount = this.props.raiders.filter(x=> x.class == this.props.buffClass).length ?? 0;
-        return (<tr className={this.props.buffClass.toLowerCase().replace(' ', '')}>
+        return (<tr className={slug(this.props.buffClass)}>
                     <td className='class'>{this.props.buffDescription}</td>         
                     {buffCount == 0 ? <td><Icon.X color='red' /></td> : <td><Icon.Check2 color='green' /></td>}
                     {buffCount == 0 ? <td>&nbsp;</td> : <td>x{buffCount}</td>}
