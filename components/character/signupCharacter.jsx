@@ -11,8 +11,8 @@ class SignupCharacter {
     } 
 
     this.role = role;
-    this.trial = character[10] !== undefined && character[10].indexOf("Trial") != -1;
-    this.limited = character[10] !== undefined && character[10].indexOf("Limited") != -1;
+    this.trial = character[4] !== undefined && character[4].indexOf("Trial") != -1;
+    this.limited = character[4] !== undefined && character[4].indexOf("Limited") != -1;
   }
 }
 
