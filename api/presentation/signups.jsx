@@ -33,7 +33,7 @@ export default class presentationSignups {
             return [];
         }
 
-        const sheetData = await googleSheetsClient.getSheetData(process.env.SIGNUP_SHEET_ID, 'A7:K50');
+        const sheetData = await googleSheetsClient.getSheetData(process.env.SIGNUP_SHEET_ID, 'A5:E50');
         const signups = sheetData.filter(x => x[0] !== '').map((row) => new SignupCharacter(row));
         return signups.sort(this.characterNameCompare).sort(this.characterRoleCompare);
     } 
