@@ -3,11 +3,12 @@ import { round } from '../../utils';
 import rioClient from './client'
 
 let counter = 0;
-let currentTier = "32";
+
 
 class rioCharacter {
     constructor(name, realm, rank, rioChar, main) {
         counter = counter +1;
+        let currentTier = process.env.CURRENT_TIER;
 
         if (counter % 100 == 0) {
             console.log("charCount; " + counter);

@@ -5,6 +5,8 @@ import presentationRoster from '../api/presentation/roster';
 import RaidBotsLink from '../components/characterLink/raidbotsLink';
 import RaiderIOLink from '../components/characterLink/raiderioLink';
 
+const tierNUMBER = process.env.NEXT_PUBLIC_CURRENT_TIER;
+
 export default function Home({ raiders }) {
   return (
     <div className="table-responsive">
@@ -15,8 +17,7 @@ export default function Home({ raiders }) {
             <th scope="col">score</th>
             <th scope="col">name</th>
             <th scope="col">ilvl</th>
-            <th scope="col">t31.5</th>
-            <th scope="col">m+ (8-9)</th>
+            <th scope="col">t{tierNUMBER}</th>
             <th scope="col">m+ (10+)</th>
             <th scope="col">m+ (max)</th>
             <th scope="col">m+ (total)</th>
@@ -37,7 +38,6 @@ export default function Home({ raiders }) {
                   <td className='class'>{user.name}</td>
                   <td>{user.ilvl}</td>
                   <td>{user.tierCount}</td>
-                  <td>{user.mp_myth}</td>
                   <td>{user.mp_twenties}</td>
                   <td>{user.mp_max}</td>
                   <td>{user.mp_total === 10 ? "10+" : user.mp_total}</td>
@@ -55,7 +55,6 @@ export default function Home({ raiders }) {
                     <td className='class'>{alt.name}</td>
                     <td>{alt.ilvl}</td>
                     <td>{alt.tierCount}</td>
-                    <td>{alt.mp_myth}</td>
                     <td>{alt.mp_twenties}</td>
                     <td>{alt.mp_max}</td>
                     <td>{alt.mp_total === 10 ? "10+" : alt.mp_total}</td>
