@@ -25,7 +25,7 @@ export default class rioClient {
     const $ = cheerio.load(markup);
     let main = null;
 
-    $(".about-container header span").each((index, element) => {
+    $(".about-container header div span").each((index, element) => {
       let span = cheerio.load(element);
       let text = span.text();
 
